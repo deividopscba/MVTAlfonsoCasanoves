@@ -7,8 +7,9 @@ from django.template import loader
 #path = pathlib.Path(__file__).parent.resolve()
 
 def familia(self):
+    data = {'nombre':'Alfonso', 'apellido':'Casanoves'}
     planilla = loader.get_template('familia.html')
-    documento = planilla.render()
+    documento = planilla.render(data)
     return HttpResponse(documento)
 
 
