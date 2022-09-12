@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola soy la template familia y estoy en rama dev</title>
+    <title>MI Familia</title>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
 </head>
 <body>
-    Hola soy {{nombre}} {{apellido}}
+    <h2>Familiares:</h2>
     
-    <!--Ejemplo de lista
+{%for fam in miFamilia%}
+ <br>
+<div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nombre: {{fam.nombre}} </li>
+          <li class="list-group-item">Apellido: {{fam.apellido}}</li>
+          <li class="list-group-item">Familiar: {{fam.familiar}}</li>
+          <li class="list-group-item">Fecha de nacimiento: {{fam.fechaNacimiento}}</li>
+          <li class="list-group-item">Edad: {{fam.edad}}</li>
+        </ul>
+      </div>
+      <br>
+{%endfor%}
 
-    {%for n in lista%}
-        {{n}}
-        <br>
-        {%endfor%}-->
 </body>
 </html>
